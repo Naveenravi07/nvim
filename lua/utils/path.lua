@@ -10,11 +10,15 @@ end
 --- Get root directory of git project
 ---@return string|nil
 function M.get_git_root()
-  return require("lazyvim.util").root.git()
+  local git_root = vim.fn.systemlist("git rev-parse --show-toplevel")[1]
+  if vim.v.shell_error == 0 then
+    return git_root
+  end
+  return nil
 end
 
 --- Get root directory of git project or fallback to current directory
----@return string|nil
+---@return string
 function M.get_root_directory()
   if M.is_git_repo() then
     return M.get_git_root()
@@ -24,3 +28,4 @@ function M.get_root_directory()
 end
 
 return M
+

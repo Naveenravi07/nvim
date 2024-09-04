@@ -57,19 +57,19 @@ return {
     },
     keys = {
       {
-        "<leader>fa",
+        "<leader>ka",
         "<cmd> Telescope find_files follow=true no_ignore=true hidden=true <CR>",
         desc = "Find All Files (including hidden)",
       },
       {
-        "<leader>fs",
+        "<leader>ks",
         function()
           live_grep_from_project_git_root()
         end,
         desc = "Live Grep From Project Git Root",
       },
       {
-        "<leader>fg",
+        "<leader>kg",
         function()
           find_files_from_project_git_root()
         end,

@@ -1,5 +1,5 @@
 vim.g.mapleader = " "
-
+vim.opt.relativenumber = true
 vim.keymap.set("n", "<leader>kv", vim.cmd.Ex)
 vim.keymap.set("t", "<leader>kv", vim.cmd.Ex)
 
